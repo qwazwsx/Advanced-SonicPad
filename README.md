@@ -119,7 +119,8 @@ $ `~/kiauh/kiauh.sh`
 Command breakdown:
 Runs the executable located at `/home/sonic/kiauh/kiauh.sh`
 
-![[Pasted image 20240203080247.png]]
+![image](ImageResources/KIAUH.png)
+
 Follow the onscreen instructions to install the software you want.
 
 *Klipper* - talks directly with the printer
@@ -201,10 +202,14 @@ serial: /tmp/klipper_host_mcu
 
 [adxl345]
 cs_pin: rpi:None
+spi_speed: 2000000
+spi_bus: spidev2.0
 
 [resonance_tester]
 accel_chip: adxl345
-probe_points: 100,100,20 # an example
+accel_per_hz: 70
+probe_points:
+      117.5,117.5,10
 ```
 
 -----
