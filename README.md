@@ -11,7 +11,9 @@ In order to install this we are going to need to download the new firmware, flas
 
 Download Page links (direct download links are provided below):
 [Creality OG Firmware Download](https://www.creality.com/pages/download-creality-sonic-pad) (in case you ever want to go back)
+
 [SonicPad Debian GitHub Releases Page](https://github.com/Jpe230/SonicPad-Debian/releases)
+
 [Creality SonicPad Firmware GitHub Page - PhoenixSuit Firmware Install Tool](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)
 
 
