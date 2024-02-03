@@ -197,7 +197,7 @@ make flash
 Add the following to the `printer.cfg`
 ```
 [mcu rpi]
-serial: /tmp.klipper_host_mcu
+serial: /tmp/klipper_host_mcu
 
 [adxl345]
 cs_pin: rpi:None
