@@ -171,147 +171,19 @@ You must gracefully shut the Sonic Pad down using an interface like KlipperScree
 ------
 
 ## Optional (but helpful) addon steps:
-- **Adding KlipperScreen to Moonraker's Update Manager**
-- **Fix System Clock Time zone**
-- **Install Accelerometer** 
-- **Turn off display after inactivity**
+- [**Add KlipperScreen to Moonraker's Update Manager**](SetupKlipperScreenUpdater.md)
+	- Let Moonraker handle keeping KlipperScreen up to date 
+- [**Fix System Clock Time zone**](AdjustTimeZone.md)
+	- Set time zone to your proper location
+- [**Install Accelerometer**](InstallAccelerometer.md)
+	- Install and configure Accelerometer 
+- [**Turn off display after inactivity**](EnableDisplayTimeout.md)
+	- Turn off backlight when the screen goes to sleep 
 
-**Adding KlipperScreen to Moonraker's Update Manager**
-Moonraker has an update manager which makes keeping your system up to date really easy. To add KlipperScreen to this list, add the following lines to the end of `moonraker.conf`. You should then be able to update KlipperScreen via the web interface.
 
-```
-[update_manager KlipperScreen]
-type: git_repo
-path: ~/KlipperScreen
-origin: https://github.com/jordanruthe/KlipperScreen.git
-env: ~/.KlipperScreen-env/bin/python
-requirements: scripts/KlipperScreen-requirements.txt
-install_script: scripts/KlipperScreen-install.sh
-managed_services: KlipperScreen
-```
 
------
 
-**Fix System Clock**
-To see the list of all available time zones:
 
-`timedatectl list-timezones | more`
 
-To set the timezone:
-$ `timedatectl set-timezone 'America/Chicago'`
 
-To verify you the currently set time zone
-$ `timedatectl`
-
-Reboot for the changes to take effect
-
-***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
-
------
-
-**Install Accelerometer** 
-
-$ `sudo apt update`
-Update package index
-
-$ `sudo apt install binutils-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib gcc-arm-none-eabi`
-Install Dependencies
-
-$ `sudo apt install python3-numpy python3-matplotlib libatlas-base-dev`
-Install numpy, matplotlib, and LibAtlas (linear algebra software)
-
-$ `~/klippy-env/bin/pip install -v numpy`
-Install numpy to our Klipper python virtual env
-
-$ `sudo cp ~klipper/scripts/klipper-mcu.service /etc/systemd/system/`
-install Klipper MCU service to Systemd to autostart
-
-```
-cd ~/klipper
-make clean
-make menuconfig
-make flash
-```
-
-Add the following to the `printer.cfg`
-```
-[mcu rpi]
-serial: /tmp/klipper_host_mcu
-
-[adxl345]
-cs_pin: rpi:None
-spi_speed: 2000000
-spi_bus: spidev2.0
-
-[resonance_tester]
-accel_chip: adxl345
-accel_per_hz: 70
-probe_points:
-      117.5,117.5,10
-```
-
------
-
-**Turn off display after inactivity**
-By default, the screen will blank after inactivity, but the backlight will remain on. This script, by [Calculous](https://github.com/calculous/SonicPad-Debian) on GitHub, remedies this.
-
-Create a new file called `display-sleep.sh` in your home directory with the following contents:
-
-```
-#!/bin/bash
- 
-#config
-delay=2 # repeat every 2 seconds
- 
-# init
- 
-read dummy dummy  former_state < <(xset -display :0 -q | grep "Monitor is ")
-echo $former_state
-sleep $delay
- 
-#loop
-while true; do
-  read dummy dummy state < <(xset -display :0 -q | grep "Monitor is ")
-  echo $state
-  [ "$state" = "On" ] || state="Off" # squeeze away suspend/standby, monitor is off
-  if [ "$state" != "$former_state" ]; then
-    if [ "$state" = "On" ]; then
-        brightness -s 1
-    else
-        brightness -s 0
-    fi
-    former_state="$state"
-  fi
-sleep $delay
-done
-```
-
-You can use the command $ `nano ~/display-sleep.sh` to open the file with the nano text editor. Use CTRL+X to close and save.  
-
-$ `chmod +x ~/display-sleep.sh`
-Mark the file as executable
-
-Next, we're going to create a Systemd service to keep this script running. Create a file at `/etc/systemd/system/display-sleep.service` with the following contents:
-```
-[Unit]
- 
-Description=Display Sleep
- 
-After=default.target
- 
-[Service]
- 
-ExecStart=/home/sonic/display-sleep.sh
- 
-[Install]
- 
-WantedBy=default.target
-```
- $ `sudo nano /etc/systemd/system/display-sleep.service`
-
-Enable the service
-$ `sudo systemctl start display-sleep.service`
-$ `sudo systemctl enable display-sleep.service`
-
------
 
