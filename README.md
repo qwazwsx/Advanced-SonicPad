@@ -1,7 +1,9 @@
 # Advanced-SonicPad
 
 
-**Why install SonicPad-Debian**
+**Why install SonicPad-Debian?**
+
+
 The Sonic Pad runs Tina Linux, a forked version of OpenWRT made by Allwinner, the SOC manufacturer for the Sonic Pad. The Sonic Pad runs modified versions of popular open source software like Klipper, Moonraker, and Klipper Screen. This is great because it makes it "just work" for their one particular use case, but offers little in terms of customization for advanced users.
 
 The SonicPad-Debian project is a fork of Debian Linux designed to run on the sonic pad. It comes preinstalled with mainline, unmodified 3d printing software like Klipper, Mainsail, and Klipper Screen.  
