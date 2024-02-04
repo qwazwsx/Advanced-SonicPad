@@ -1,5 +1,5 @@
 # Advanced-SonicPad
-
+This repository aims to be a central place for information regarding advanced use cases of the Sonic Pad, with a focus on SonicPad-Debian.
 
 **Why install SonicPad-Debian?**
 
