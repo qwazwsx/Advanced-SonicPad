@@ -26,7 +26,7 @@ If you haven't seen it before, this is a multi part zip file. That is, the conte
 
 Unzip the firmware, you will find a file called `t800-sonic-debian.img`
 
-This subsection of the tutorial has an Official Video Tutorial from Creality, as well as official written guides for Windows, MacOS, and Ubuntu. Please See:
+This subsection of the tutorial has an Official Video Tutorial from Creality, as well as official written guides for Windows, MacOS, and Ubuntu. If you are using another operating system or need more assistance, please see:
 - [`YouTube: Creality Sonic Pad System Restore Tutorial`](https://www.youtube.com/watch?v=i0iNu-1b6NI)
 - [`Sonic Pad Firmware Burning Tutorial _Windows_V1.1.pdf`](https://raw.githubusercontent.com/qwazwsx/Advanced-SonicPad/main/Official%20Firmware%20Update%20Tutorials/Sonic%20Pad%20Firmware%20Burning%20Tutorial%20_Windows_V1.1.pdf)
 - [`Sonic Pad Firmware Burning Tutorial_MacOS_V1.3.pdf`](https://raw.githubusercontent.com/qwazwsx/Advanced-SonicPad/main/Official%20Firmware%20Update%20Tutorials/Sonic%20Pad%20Firmware%20Burning%20Tutorial_MacOS_V1.3.pdf)
