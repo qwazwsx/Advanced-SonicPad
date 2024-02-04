@@ -3,13 +3,13 @@
 
 **Why install SonicPad-Debian?**
 
-
 The Sonic Pad runs Tina Linux, a forked version of OpenWRT made by Allwinner, the SOC manufacturer for the Sonic Pad. The Sonic Pad runs modified versions of popular open source software like Klipper, Moonraker, and Klipper Screen. This is great because it makes it "just work" for their one particular use case, but offers little in terms of customization for advanced users.
 
 The SonicPad-Debian project is a fork of Debian Linux designed to run on the sonic pad. It comes preinstalled with mainline, unmodified 3d printing software like Klipper, Mainsail, and Klipper Screen.  
 
 In order to install this we are going to need to download the new firmware, flash it to the sonic pad, and then do some configuration afterwards.
 
+Be warned: This tutorial assumes some very basic knowledge of Linux, but-- if you've ever messed around with a Raspberry Pi for more than a few hours you'll be fine.
 
 Download Page links (direct download links are provided below):
 
@@ -19,16 +19,19 @@ Download Page links (direct download links are provided below):
 
 [Creality SonicPad Firmware GitHub Page - PhoenixSuit Firmware Install Tool](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)
 
+## Download The SonicPad-Debian Firmware
 
 Download three files from the SonicPad Debian GitHub Releases Page:
 - [`t800-sonic-debian.zip`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v0.0-bullseye1/t800-sonic-debian.zip)
 - [`t800-sonic-debian.z01`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v0.0-bullseye1/t800-sonic-debian.z01)
 - [`t800-sonic-debian.z02`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v0.0-bullseye1/t800-sonic-debian.z02)
+
 If you haven't seen it before, this is a multi part zip file. That is, the contents of the zip are spread out throughout the three files and you need all three to extract the full contents. 
 
 Unzip the firmware, you will find a file called `t800-sonic-debian.img`
 
-This subsection of the tutorial has an Official Video Tutorial from Creality, as well as official written guides for Windows, MacOS, and Ubuntu. If you are using another operating system or need more assistance, please see:
+## Download PhoenixSuit
+This subsection of the tutorial has an Official Video Tutorial from Creality, as well as official written guides for Windows, MacOS, and Ubuntu. Please See:
 - [`YouTube: Creality Sonic Pad System Restore Tutorial`](https://www.youtube.com/watch?v=i0iNu-1b6NI)
 - [`Sonic Pad Firmware Burning Tutorial _Windows_V1.1.pdf`](https://raw.githubusercontent.com/qwazwsx/Advanced-SonicPad/main/Official%20Firmware%20Update%20Tutorials/Sonic%20Pad%20Firmware%20Burning%20Tutorial%20_Windows_V1.1.pdf)
 - [`Sonic Pad Firmware Burning Tutorial_MacOS_V1.3.pdf`](https://raw.githubusercontent.com/qwazwsx/Advanced-SonicPad/main/Official%20Firmware%20Update%20Tutorials/Sonic%20Pad%20Firmware%20Burning%20Tutorial_MacOS_V1.3.pdf)
@@ -36,13 +39,13 @@ This subsection of the tutorial has an Official Video Tutorial from Creality, as
 
 Download [`PhoenixSuit_Windows_V1.10.zip`](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware/raw/main/tools/PhoenixSuit_Windows_V1.10.zip) from the "tools" directory in the Creality Sonic Pad Firmware GitHub page.  Unzip the file and enter the `PhoenixSuit_V1.10` directory. Open the `PhoenixSuit.exe` file. After a few moments, PhoenixSuit will open.
 
-
 ![image](ImageResources/PhoenixSuit.png)
 
 Navigate to the "Firmware" tab. Click "Image" and select the newly extracted `t800-sonic-debian.img` file. 
 
 You can leave the software be for now.
 
+## Put SonicPad in Burning Mode
 
 ![image](ImageResources/USBPort.png)
 
@@ -54,7 +57,7 @@ Connect one end of a [**USB A Male to USB A Male**](https://www.amazon.com/s?k=u
 Put the Sonic Pad into "Burning Mode" by pressing and holding down the outermost recessed button with a small tool while turning the Sonic Pad on. The screen will remain black, but light on the side will still illuminate.
 
 Next, we need to install the PhoenixSuit drivers in order to communicate with the SonicPad
-
+## Install Drivers
 ![image](ImageResources/DeviceManager.png)
 
 Open **Device Manager**
@@ -73,9 +76,15 @@ Select **"Browse"** and select the subdirectory "Drivers" from the Phoenix Suit 
 
 Click **Next**, the drivers will be installed, and the PhoenixSuit software should pop up. If it doesn't, try restarting the Sonic Pad and re-entering Burning Mode.  
 
+## Flash the firmware
+
 ![image](ImageResources/PhoenixSuit2.png)
 
-Once PhoenixSuit has popped up, click "Yes" to the prompt.
+Once PhoenixSuit has popped up, click "Yes" to the prompt. Again, if there is no popup, try restarting both the Sonic Pad and the software.
+
+***Warning: Once you flash the new firmware-- turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+
+If you ever need to go back to stock software,  you can [download the Creality firmware here](https://www.creality.com/pages/download-creality-sonic-pad).
 
 ![image](ImageResources/PhoenixSuit3.png)
 
@@ -87,16 +96,27 @@ The new firmware has now been installed! We just need to set some things up firs
 
 Once it's done, restart the Sonic Pad, you should see the Debian logo (red swirl) while the device is booting.
 
+## Configuring SonicPad-Debian
+
 **Connect to WiFi**
 Using the touchscreen, select **Menu > Network** and connect to your WiFi network (or use Ethernet). Take note of the internal IP address your Sonic Pad is assigned after connecting to your WiFi. 
 
-If you don't already have an SSH client installed, get PuTTY
+If you don't already have an SSH client installed, get [PuTTY]((https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 [PuTTY x86 Binary Download .exe](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe)
-[PuTTY download page](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
 **Connect to your SonicPad using SSH**
 $ `ssh sonic@<your-sonic-pad-ip>`
-The default password is `pad`. For security, no characters will show up when typing the password. You may have to type "yes" to confirm connecting.
+The default password is `pad`. For security, no characters will show up when typing the password. You may have to type "yes" to confirm connecting for the first time.
+
+**Change Default Passwords (optional but important)**
+Default Users:
+	user: `root`, password: `toor`
+	user: `sonic`, password: `pad`
+
+To change `root` user password:
+$ `sudo passwd root` 
+To change `sonic` user password:
+$ `passwd sonic`
 
 **Resize filesystem**
 Since the image we flashed to the Sonic Pad was only 3 GB, we need to expand this 3 GB filesystem to the full 8 GB of the drive. 
@@ -116,35 +136,43 @@ $ `sudo apt-get update && sudo apt-get upgrade`
 Command Breakdown:
 As root, update all package index files, and then upgrade all packages
 
-Install 3D Printing Software
+**Install other 3D Printing Software with KIAUH**
 SonicPad-Debian comes preinstalled with KIAUH the Klipper Installation And Update Helper. This will allow you to easily install or remove software like Klipper, Moonraker, Mainsail, Fluid, Crowsnest, and others. You can open KIAUH using the following command
 
 $ `~/kiauh/kiauh.sh`
 
 Command breakdown:
-Runs the executable located at `/home/sonic/kiauh/kiauh.sh`
+Runs the KIAUH executable located at `/home/sonic/kiauh/kiauh.sh`
 
 ![image](ImageResources/KIAUH.png)
 
 Follow the onscreen instructions to install the software you want.
 
-*Klipper* - talks directly with the printer
-*Mainsail* - provides an API for Klipper, so other software can talk to it
+*Klipper* - handles talking with the printer via serial
+*Mainsail* - provides an API for Klipper, so other software can talk to the printer
 *Moonraker* - web frontend for printer control (install one or both)
-*Fluidd *- web frontend for printer control (install one or both)
-KlipperScreen - provides GUI for Sonic Pad screen
+*Fluidd* - web frontend for printer control (install one or both)
+*KlipperScreen* - provides GUI for Sonic Pad screen
 
 **Configure Software**
-You should be able to configure the software you have installed by editing config files located in the  `/home/sonic/printer_data/config`
+You should be able to configure the software you have installed by editing config files located in the  `/home/sonic/printer_data/config` directory.
 
-If you are experiencing and problems you can view the log files located at `/home/sonic/printer_data/config`
+If you are experiencing and problems you can view the log files located at `/home/sonic/printer_data/config`.
 
+**DO NOT EVER PRESS THE POWER BUTTON ON THE SIDE OF THE SONIC PAD**
+You must gracefully shut the Sonic Pad down using an interface like KlipperScreen or Mainsail, or by issuing the command `sudo shutdown now` or `sudo reboot`. If you don't, the filesystem may be damaged and you will have to re-flash the Sonic Pad. Let me reiterate for those skimming.
+
+***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+
+***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+
+***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
 
 ------
 
-Optional (but helpful) addon steps:
+## Optional (but helpful) addon steps:
 - **Adding KlipperScreen to Moonraker's Update Manager**
-- **Fix System Clock**
+- **Fix System Clock Time zone**
 - **Install Accelerometer** 
 - **Turn off display after inactivity**
 
@@ -177,12 +205,17 @@ $ `timedatectl`
 
 Reboot for the changes to take effect
 
+***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+
 -----
 
 **Install Accelerometer** 
 
 $ `sudo apt update`
 Update package index
+
+$ `sudo apt install binutils-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib gcc-arm-none-eabi`
+Install Dependencies
 
 $ `sudo apt install python3-numpy python3-matplotlib libatlas-base-dev`
 Install numpy, matplotlib, and LibAtlas (linear algebra software)
