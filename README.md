@@ -11,6 +11,10 @@ In order to install this we are going to need to download the new firmware, flas
 
 Be warned: This tutorial assumes some very basic knowledge of Linux, but-- if you've ever messed around with a Raspberry Pi for more than a few hours you'll be fine.
 
+### [Need more visuals? See the 2 Minute Video Tutorial](https://www.youtube.com/watch?v=W4cSQND8eSM)
+
+-----
+
 Download Page links (direct download links are provided below):
 
 [Creality OG Firmware Download](https://www.creality.com/pages/download-creality-sonic-pad) (in case you ever want to go back)
