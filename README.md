@@ -86,7 +86,7 @@ Click **Next**, the drivers will be installed, and the PhoenixSuit software shou
 
 Once PhoenixSuit has popped up, click "Yes" to the prompt. Again, if there is no popup, try restarting both the Sonic Pad and the software.
 
-***Warning: Once you flash the new firmware-- turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+***Warning: Once you flash the new firmware-- turning the power off without gracefully shutting down the Sonic Pad first can corrupt the filesystem. Do not use the power button on the side of the Sonic Pad without first gracefully shutting down***
 
 If you ever need to go back to stock software,  you can [download the Creality firmware here](https://www.creality.com/pages/download-creality-sonic-pad).
 
@@ -164,13 +164,13 @@ You should be able to configure the software you have installed by editing confi
 If you are experiencing and problems you can view the log files located at `/home/sonic/printer_data/config`.
 
 **DO NOT EVER PRESS THE POWER BUTTON ON THE SIDE OF THE SONIC PAD**
-You must gracefully shut the Sonic Pad down using an interface like KlipperScreen or Mainsail, or by issuing the command `sudo shutdown now` or `sudo reboot`. If you don't, the filesystem may be damaged and you will have to re-flash the Sonic Pad. Let me reiterate for those skimming.
+You must gracefully shut the Sonic Pad down using an interface like KlipperScreen or Mainsail, or by issuing the command `sudo shutdown now` or `sudo reboot`. If you don't, the filesystem may be damaged and you might have to re-flash the Sonic Pad. Let me reiterate for those skimming.
 
-***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+***Just like your home computer-- Turning the power off without gracefully shutting down the Sonic Pad first can corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
 
-***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+***Just like your home computer-- Turning the power off without gracefully shutting down the Sonic Pad first can corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
 
-***Turning the power off without gracefully shutting down the Sonic Pad first will corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
+***Just like your home computer-- Turning the power off without gracefully shutting down the Sonic Pad first can corrupt the filesystem. Do not use the power button on the side of the Sonic Pad.***
 
 ------
 
