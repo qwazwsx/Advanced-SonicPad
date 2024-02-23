@@ -3,25 +3,27 @@
 
 **Install Accelerometer** 
 
-$ `sudo apt update`
-
 Update package index
 
-$ `sudo apt install binutils-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib gcc-arm-none-eabi`
+$ `sudo apt update`
 
 Install Dependencies
 
-$ `sudo apt install python3-numpy python3-matplotlib libatlas-base-dev`
+$ `sudo apt install binutils-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib gcc-arm-none-eabi`
 
 Install numpy, matplotlib, and LibAtlas (linear algebra software)
 
-$ `~/klippy-env/bin/pip install -v numpy`
+$ `sudo apt install python3-numpy python3-matplotlib libatlas-base-dev`
 
 Install numpy to our Klipper python virtual env
 
-$ `sudo cp ~klipper/scripts/klipper-mcu.service /etc/systemd/system/`
+$ `~/klippy-env/bin/pip install -v numpy`
 
 install Klipper MCU service to Systemd to autostart
+
+$ `sudo cp ~klipper/scripts/klipper-mcu.service /etc/systemd/system/`
+
+
 
 ```
 cd ~/klipper
