@@ -26,7 +26,7 @@ install Klipper MCU service to Systemd to autostart
 ```
 cd ~/klipper
 make clean
-make menuconfig
+make menuconfig # select "linux process"
 make flash
 ```
 
