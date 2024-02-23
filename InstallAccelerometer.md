@@ -24,7 +24,7 @@ install Klipper MCU service to Systemd to autostart
 $ `sudo cp ~klipper/scripts/klipper-mcu.service /etc/systemd/system/`
 
 
-
+Flash KlipperMCU
 ```
 cd ~/klipper
 make clean
