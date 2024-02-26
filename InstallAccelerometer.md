@@ -49,3 +49,29 @@ probe_points:
       117.5,117.5,10
 ```
 -----
+
+Some users have reported the following error while trying to flash klipper-mcu:
+
+```
+sonic@SonicPad:~/klipper$ make menuconfig #
+Loaded configuration '/home/sonic/klipper/.config'
+Traceback (most recent call last):
+  File "/home/sonic/klipper/lib/kconfiglib/menuconfig.py", line 3281, in <module>
+    _main()
+  File "/home/sonic/klipper/lib/kconfiglib/menuconfig.py", line 661, in _main
+    menuconfig(standard_kconfig(__doc__))
+  File "/home/sonic/klipper/lib/kconfiglib/menuconfig.py", line 705, in menuconfig
+    locale.setlocale(locale.LC_ALL, "")
+  File "/usr/lib/python3.9/locale.py", line 610, in setlocale
+    return _setlocale(category, locale)
+locale.Error: unsupported locale setting
+make: *** [Makefile:116: menuconfig] Error 1
+```
+
+Run the following commands and select "en_US UTF8"
+
+```
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+sudo dpkg-reconfigure locales
+```
