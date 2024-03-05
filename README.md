@@ -105,21 +105,27 @@ Once it's done, restart the Sonic Pad, you should see the Debian logo (red swirl
 **Connect to WiFi**
 Using the touchscreen, select **Menu > Network** and connect to your WiFi network (or use Ethernet). Take note of the internal IP address your Sonic Pad is assigned after connecting to your WiFi. 
 
-If you don't already have an SSH client installed, get [PuTTY]((https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-[PuTTY x86 Binary Download .exe](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe)
+If you don't already have an SSH client installed, install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or download the [distributable .exe here](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe)
 
 **Connect to your SonicPad using SSH**
+
 $ `ssh sonic@<your-sonic-pad-ip>`
+
 The default password is `pad`. For security, no characters will show up when typing the password. You may have to type "yes" to confirm connecting for the first time.
 
 **Change Default Passwords (optional but important)**
 Default Users:
-	user: `root`, password: `toor`
-	user: `sonic`, password: `pad`
+
+user: `root`, password: `toor`
+
+user: `sonic`, password: `pad`
 
 To change `root` user password:
+
 $ `sudo passwd root` 
+
 To change `sonic` user password:
+
 $ `passwd sonic`
 
 **Resize filesystem**
@@ -129,7 +135,9 @@ $ `sudo resize2fs /dev/mmcblk0p5`
 
 Command Breakdown
 `sudo` run the following command as root
+
 `resize2fs` the filesystem resizer tool
+
 `/dev/mmcblk0p5` the root partition of our drive
 
 You can examine the filesystem size before and after the operation using the command `df -h`
@@ -153,9 +161,13 @@ Runs the KIAUH executable located at `/home/sonic/kiauh/kiauh.sh`
 Follow the onscreen instructions to install the software you want.
 
 *Klipper* - handles talking with the printer via serial
+
 *Mainsail* - provides an API for Klipper, so other software can talk to the printer
+
 *Moonraker* - web frontend for printer control (install one or both)
+
 *Fluidd* - web frontend for printer control (install one or both)
+
 *KlipperScreen* - provides GUI for Sonic Pad screen
 
 **Configure Software**
