@@ -128,19 +128,18 @@ To change `sonic` user password:
 
 $ `passwd sonic`
 
-**Resize filesystem**
-Since the image we flashed to the Sonic Pad was only 3 GB, we need to expand this 3 GB filesystem to the full 8 GB of the drive. 
+~~**Resize filesystem**~~
 
-$ `sudo resize2fs /dev/mmcblk0p5`
+As of release v1.0, the filesystem is automatically resized at first boot, so this step is no longer required.
 
-Command Breakdown
-`sudo` run the following command as root
 
-`resize2fs` the filesystem resizer tool
+~~Since the image we flashed to the Sonic Pad was only 3 GB, we need to expand this 3 GB filesystem to the full 8 GB of the drive.~~
 
-`/dev/mmcblk0p5` the root partition of our drive
+~~$ `sudo resize2fs /dev/mmcblk0p5`~~
 
-You can examine the filesystem size before and after the operation using the command `df -h`
+~~You can examine the filesystem size before and after the operation using the command `df -h`~~
+
+
 
 **Update System**
 $ `sudo apt-get update && sudo apt-get upgrade`
