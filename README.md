@@ -26,13 +26,13 @@ Download Page links (direct download links are provided below):
 ## Download The SonicPad-Debian Firmware
 
 Download three files from the SonicPad Debian GitHub Releases Page:
-- [`t800-sonic-debian.zip`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v0.0-bullseye1/t800-sonic-debian.zip)
-- [`t800-sonic-debian.z01`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v0.0-bullseye1/t800-sonic-debian.z01)
-- [`t800-sonic-debian.z02`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v0.0-bullseye1/t800-sonic-debian.z02)
+- [`debian_r818_sonic_lcd_uart0.zip`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v1.0-bullseye/debian_r818_sonic_lcd_uart0.zip)
+- [`debian_r818_sonic_lcd_uart0.z01`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v1.0-bullseye/debian_r818_sonic_lcd_uart0.z01)
+- [`debian_r818_sonic_lcd_uart0.z02`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v1.0-bullseye/debian_r818_sonic_lcd_uart0.z02)
 
 If you haven't seen it before, this is a multi part zip file. That is, the contents of the zip are spread out throughout the three files and you need all three to extract the full contents. 
 
-Unzip the firmware, you will find a file called `t800-sonic-debian.img`
+Unzip the firmware, you will find a file called `t800-sonic-debian.img` (or something similar)
 
 ## Download PhoenixSuit
 This subsection of the tutorial has an Official Video Tutorial from Creality, as well as official written guides for Windows, MacOS, and Ubuntu. If you are using an operating system other than Windows or need more assistance, please see:
