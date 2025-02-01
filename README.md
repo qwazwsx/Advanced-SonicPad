@@ -186,13 +186,13 @@ You must gracefully shut the Sonic Pad down using an interface like KlipperScree
 ------
 
 ## Optional (but helpful) addon steps:
-- [**Add KlipperScreen to Moonraker's Update Manager**](SetupKlipperScreenUpdater.md)
+- ~~[**Add KlipperScreen to Moonraker's Update Manager**](SetupKlipperScreenUpdater.md)~~ done automatically in v1.0
 	- Let Moonraker handle keeping KlipperScreen up to date 
 - [**Fix System Clock Time zone**](AdjustTimeZone.md)
 	- Set time zone to your proper location
 - [**Install Accelerometer**](InstallAccelerometer.md)
 	- Install and configure Accelerometer 
-- [**Turn off display after inactivity**](EnableDisplayTimeout.md)
+- ~~[**Turn off display after inactivity**](EnableDisplayTimeout.md)~~ done automatically in v1.0
 	- Turn off backlight when the screen goes to sleep
  - [**Add support for USB Flash Drives**](AddUSBDriveGcodeSupport.md)
  	- Adds support for USB flash drives back to KlipperScreen
