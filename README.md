@@ -150,6 +150,10 @@ As root, update all package index files, and then upgrade all packages
 **Install other 3D Printing Software with KIAUH**
 SonicPad-Debian comes preinstalled with KIAUH the Klipper Installation And Update Helper. This will allow you to easily install or remove software like Klipper, Moonraker, Mainsail, Fluid, Crowsnest, and others. You can open KIAUH using the following command
 
+**as of release v1.0, KIUAH no longer comes packaged, download it using:**
+
+$ `cd ~ && git clone https://github.com/dw-0/kiauh.git`
+
 $ `~/kiauh/kiauh.sh`
 
 Command breakdown:
