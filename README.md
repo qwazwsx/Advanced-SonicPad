@@ -15,6 +15,12 @@ Be warned: This tutorial assumes some very basic knowledge of Linux, but-- if yo
 
 -----
 
+# See updated instructions for flashing here: https://github.com/qwazwsx/SonicPad-Debian/blob/main/docs/flashing.md
+# This manual is outdated and will no longer be updated. Moving instructions to a fork of SonicPad-Debian which will (hopefully, with changes) be accepted upstream into the main project repository.
+# Updated Manual: https://github.com/qwazwsx/SonicPad-Debian/blob/main/docs/flashing.md
+# The outdated manual is provided below for historical reasons
+-----
+
 Download Page links (direct download links are provided below):
 
 [Creality OG Firmware Download](https://www.creality.com/pages/download-creality-sonic-pad) (in case you ever want to go back)
