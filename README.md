@@ -15,10 +15,11 @@ Be warned: This tutorial assumes some very basic knowledge of Linux, but-- if yo
 
 -----
 
-# See updated instructions for flashing here: https://github.com/qwazwsx/SonicPad-Debian/blob/main/docs/flashing.md
-# This manual is outdated and will no longer be updated. Moving instructions to a fork of SonicPad-Debian which will (hopefully, with changes) be accepted upstream into the main project repository.
-# Updated Manual: https://github.com/qwazwsx/SonicPad-Debian/blob/main/docs/flashing.md
+# See updated instructions for flashing provided in the Jpe230/SonicPad-Debian repo: [https://github.com/Jpe230/SonicPad-Debian/blob/main/docs/flashing.md](https://github.com/Jpe230/SonicPad-Debian/blob/main/docs/flashing.md)
+# This manual is outdated and will no longer be updated.
+# Updated Manual: https://github.com/Jpe230/SonicPad-Debian/blob/main/docs/flashing.md
 # The outdated manual is provided below for historical reasons
+# I can tell y'all aren't reading this message because this repo is still getting stars. Please do see the better version of the manual above.
 -----
 
 Download Page links (direct download links are provided below):
@@ -30,11 +31,15 @@ Download Page links (direct download links are provided below):
 [Creality SonicPad Firmware GitHub Page - PhoenixSuit Firmware Install Tool](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)
 
 ## Download The SonicPad-Debian Firmware
+# These files are OUTDATED. See the new instructions linked above.
+# These files are OUTDATED. See the new instructions linked above.
+# These files are OUTDATED. See the new instructions linked above.
 
 Download three files from the SonicPad Debian GitHub Releases Page:
 - [`debian_r818_sonic_lcd_uart0.zip`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v1.0-bullseye/debian_r818_sonic_lcd_uart0.zip)
 - [`debian_r818_sonic_lcd_uart0.z01`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v1.0-bullseye/debian_r818_sonic_lcd_uart0.z01)
 - [`debian_r818_sonic_lcd_uart0.z02`](https://github.com/Jpe230/SonicPad-Debian/releases/download/v1.0-bullseye/debian_r818_sonic_lcd_uart0.z02)
+
 
 If you haven't seen it before, this is a multi part zip file. That is, the contents of the zip are spread out throughout the three files and you need all three to extract the full contents. 
 
